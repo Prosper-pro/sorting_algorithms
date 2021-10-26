@@ -52,7 +52,7 @@ void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
-
+listint_t *swap_nodes(listint_t *n, listint_t *b, listint_t *head);
 int get_biggest_num(int *array, size_t size);
 void fill_array(int *arra, int *arrb, size_t size);
 void topdownmergesort(int *a, int *b, int n);
