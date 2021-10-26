@@ -29,5 +29,10 @@ void quick_sort(int *array, size_t size);
 void qs(int *arr, int low, int high, size_t size);
 int partition(int *arr, int low, int high, size_t size);
 
+void shell_sort(int *array, size_t size);
+void cocktail_sort_list(listint_t **list);
+void counting_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
 
-#endif
+#endif /*SORT_H*/
