@@ -50,3 +50,41 @@ void cocktail_sort_list(listint_t **list)
 		i++, start = start->next;
 	}
 }
+
+
+
+/**
+ * *swap_nodes - swaps two nodes
+ * @n: node 1
+ * @b: node 2
+ * @head: head of the list
+ * Return: pointer to head if changed or NULL
+ */
+
+listint_t *swap_nodes(listint_t *n, listint_t *b, listint_t *head)
+{
+	listint_t *tmp;
+
+	tmp = n->next;
+	tmp->prev = b;
+	n->next = b->next;
+	b->next = tmp;
+	if (n->next != NULL)
+		n->next->prev = n;
+
+	tmp = n->prev;
+	if (tmp != NULL)
+	{
+		n->prev = b->prev;
+		n->prev->next = n;
+		b->prev = tmp;
+		b->prev->next = b;
+		print_list(head);
+		return (NULL);
+	}
+	n->prev = b->prev;
+	n->prev->next = n;
+	b->prev = tmp;
+	print_list(b);
+	return (b);
+}
