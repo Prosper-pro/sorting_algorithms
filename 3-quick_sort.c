@@ -34,8 +34,10 @@ void qs(int *arr, int low, int high, size_t size)
 
 	p = partition(arr, low, high, size);
 
-	qs(arr, low, p - 1, size);
-	qs(arr, p + 1, high, size);
+	if (p - low > 1)
+		qs(arr, low, p - 1, size);
+	if (high - p > 1)
+		qs(arr, p + 1, high, size);
 }
 
 
@@ -56,20 +58,27 @@ int partition(int *arr, int low, int high, size_t size)
 		if (arr[j] < pivot)
 		{
 			++i;
-			if (j == i)
-				continue;
-			/*swaping*/
-			tmp = arr[j];
-			arr[j] = arr[i];
-			arr[i] = tmp;
-			print_array(arr, size);
+			if (j != i)
+			{
+				/*swaping*/
+				tmp = arr[j];
+				arr[j] = arr[i];
+				arr[i] = tmp;
+				print_array(arr, size);
+			}
 		}
 	}
-	tmp = arr[high];
-	arr[high] = arr[i + 1];
-	arr[i + 1] = tmp;
-	if (i != high - 1)
-		print_array(arr, size);
+	if (i < high - 1)
+	{
+		if (arr[i + 1] != arr[high])
+		{
+			tmp = arr[high];
+			arr[high] = arr[i + 1];
+			arr[i + 1] = tmp;
+			print_array(arr, size);
+		}
+		return (i + 1);
+	}
 
-	return (i + 1);
+	return (high);
 }
