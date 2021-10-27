@@ -43,24 +43,10 @@ int get_biggest_num(int *array, size_t size);
 void fill_array(int *arra, int *arrb, size_t size);
 
 void topdownmergesort(int *A, int *B, int n);
-void splitmerge(int *array, int *array_c, size_t size, size_t l, size_t r);
-void topdownmerge(int *array, int *array_c, size_t l, size_t m, size_t r);
-void copyarray(int *A, int iBegin, int iEnd, int *B);
-
-void shell_sort(int *array, size_t size);
-void cocktail_sort_list(listint_t **list);
-void counting_sort(int *array, size_t size);
-void merge_sort(int *array, size_t size);
-void quick_sort_hoare(int *array, size_t size);
-listint_t *swap_nodes(listint_t *n, listint_t *b, listint_t *head);
-int get_biggest_num(int *array, size_t size);
-void fill_array(int *arra, int *arrb, size_t size);
 void topdownmergesort(int *a, int *b, int n);
 void splitmerge(int *array, int *array_c, size_t size, size_t l, size_t r);
 void topdownmerge(int *array, int *array_c, size_t l, size_t m, size_t r);
 void copyarray(int *a, int ibegin, int iend, int *b);
-void qsh(int *array, int low, int high, size_t size);
 int partitionh(int *arr, int lo, int hi, size_t size);
-void swap(int *array, int i, int j, size_t size);
 
 #endif /*SORT_H*/
